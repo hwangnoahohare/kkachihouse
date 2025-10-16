@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KKachihouse — Korean Street Food in the UK</title>
+  <meta name="description" content="KKachihouse serves Korean street food — corndogs, kimbap, tteokbokki and more — proudly associated with Kkachinae (est. 1983, Korea). Find our food truck around the UK." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#111826; --ink:#e8eef6; --muted:#a9b6c6; --brand:#f43f5e; --brand-2:#06b6d4; --accent:#f59e0b;
+      --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;}
+    body{font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans KR", sans-serif; color:var(--ink); background: radial-gradient(1000px 700px at 10% -10%, #132031 0%, transparent 60%), linear-gradient(180deg, #0b0f14 0%, #0b0f14 100%);}    
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.7);backdrop-filter: blur(8px); border-bottom:1px solid #1e2a3a}
+    .nav{display:flex;align-items:center;gap:14px; padding:14px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+    .logo svg{width:28px;height:28px}
+    .nav a{color:var(--ink);opacity:.9}
+    .spacer{flex:1}
+    .cta{background:linear-gradient(135deg,var(--brand),var(--brand-2)); color:#fff; padding:10px 16px; border-radius:999px; font-weight:600; box-shadow:var(--shadow)}
+
+    .hero{display:grid;grid-template-columns:1.1fr .9fr; gap:28px; align-items:center; padding:56px 0 32px}
+    .hero h1{font-size:clamp(32px,4.5vw,54px);line-height:1.05;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .badge{display:inline-flex;align-items:center;gap:10px;background:#122033;border:1px solid #1f2c40;padding:6px 12px;border-radius:999px;margin-bottom:14px}
+    .panel{background:linear-gradient(180deg,#0f1622,#0a0f15); border:1px solid #1c2737; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .hero .panel{padding:18px}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:#192435;border:1px solid #223147;padding:6px 10px;border-radius:999px;color:#cfd8e3;font-size:13px}
+    .chip svg{width:18px;height:18px}
+
+    .gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:140px; gap:10px}
+    .tile{position:relative; border-radius:14px; overflow:hidden; background:#111826; border:1px solid #1b2738}
+    .tile .cap{position:absolute;inset:auto 0 0 0; padding:8px 10px; background:linear-gradient(180deg,transparent,rgba(0,0,0,.65)); font-size:13px}
+    .tile img{width:100%;height:100%;object-fit:cover; display:block;filter:saturate(1.05) contrast(1.05)}
+    .t2{grid-column:span 2}
+    .t3{grid-column:span 3}
+    .t4{grid-column:span 4}
+
+    section{padding:56px 0}
+    h2{font-size:clamp(24px,3.2vw,36px); margin:0 0 10px}
+    .muted{color:var(--muted)}
+
+    .menu{display:grid;grid-template-columns:repeat(2,1fr); gap:16px}
+    .card{background:linear-gradient(180deg,#101826,#0c121a);border:1px solid #1a2535;border-radius:16px;padding:16px;display:flex;gap:12px}
+    .card img{width:90px;height:90px;border-radius:12px;object-fit:cover;border:1px solid #223147}
+    .card h3{margin:0 0 4px;font-size:18px}
+    .price{margin-left:auto; font-weight:700; color:#fff; background:#162236; border:1px solid #23324a; padding:6px 10px; border-radius:10px}
+
+    .two{display:grid;grid-template-columns:1fr 1fr; gap:22px}
+    .about p{margin:.5rem 0}
+
+    .strip{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{background:#162236;border:1px solid #223147;color:#cfd8e3;padding:8px 12px;border-radius:999px;font-size:13px}
+
+    .notice{background:#20130f;border:1px solid #3b241c; color:#ffd9c7; padding:12px 14px; border-radius:12px}
+
+    footer{border-top:1px solid #1e2a3a; padding:24px 0; color:#aebad0}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:repeat(3,1fr)}
+      .menu{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo" aria-label="KKachihouse">
+        <!-- simple inline logo -->
+        <svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f43f5e"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><circle cx="24" cy="24" r="22" fill="url(#g)"/><path d="M13 31c4-3 7-7 11-16 4 9 7 13 11 16-4 3-7 4-11 4s-7-1-11-4z" fill="#fff" opacity="0.9"/></svg>
+        <span>KKachihouse</span>
+      </div>
+      <a href="#menu">Menu</a>
+      <a href="#story">Our Story</a>
+      <a href="#find-us">Find Us</a>
+      <a href="#contact">Contact</a>
+      <div class="spacer"></div>
+      <a class="cta" href="#order">Order & Enquire</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div>
+        <div class="badge"><strong>Since 1983 —</strong> In association with <em>Kkachinae</em>, Korea</div>
+        <h1>Korean Street Food in the UK —
+          <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">KKachihouse</span>
+        </h1>
+        <p>From golden, stretchy-cheese <strong>Korean corndogs</strong> to fresh, hand‑rolled <strong>kimbap</strong>, our food truck brings Seoul’s favourite street bites to UK streets and festivals. Proudly associated with <em>Kkachinae</em> (est. 1983, Korea).</p>
+        <div class="strip" style="margin:14px 0 18px">
+          <span class="chip" title="Halal-friendly options"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 3l3 7h7l-5.5 4 2 7L12 17l-6.5 4 2-7L2 10h7l3-7z" stroke-width="1.6"/></svg>Festival-ready</span>
+          <span class="chip" title="Contactless payments accepted"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="1.6"/><path d="M8 12h8" stroke-width="1.6"/></svg>Contactless</span>
+          <span class="chip" title="Vegetarian options available"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 12c3-8 13-8 16 0-2 7-14 7-16 0z" stroke-width="1.6"/></svg>Veg options</span>
+        </div>
+        <div class="panel">
+          <strong>Signature items</strong>
+          <div class="strip" style="margin-top:10px">
+            <span class="pill">Mozzarella Corndog</span>
+            <span class="pill">Half & Half Corndog</span>
+            <span class="pill">Classic Beef Corndog</span>
+            <span class="pill">Kimbap (Tuna / Veg / Bulgogi)</span>
+            <span class="pill">Tteokbokki</span>
+            <span class="pill">Mandu (Dumplings)</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="gallery">
+          <figure class="tile t3"><img alt="Korean corndogs with sugar and ketchup" src="https://images.unsplash.com/photo-1625944368661-7a1d2c02aa2c?q=80&w=1200&auto=format&fit=crop"/><figcaption class="cap">Crispy, gooey corndogs</figcaption></figure>
+          <figure class="tile t3"><img alt="Kimbap rolls neatly sliced" src="https://images.unsplash.com/photo-1617195737491-54a9a9a8cf0a?q=80&w=1200&auto=format&fit=crop"/><figcaption class="cap">Fresh hand‑rolled kimbap</figcaption></figure>
+          <figure class="tile t2"><img alt="Tteokbokki in spicy sauce" src="https://images.unsplash.com/photo-1609137144813-7d992a9de9ad?q=80&w=1200&auto=format&fit=crop"/><figcaption class="cap">Tteokbokki</figcaption></figure>
+          <figure class="tile t4"><img alt="Street food truck at night" src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1200&auto=format&fit=crop"/><figcaption class="cap">Find us at markets & festivals</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="container">
+        <h2>Menu Highlights</h2>
+        <p class="muted">Prices in GBP (£). Please ask about allergens and vegetarian options.</p>
+        <div class="menu" role="list">
+          <article class="card" role="listitem">
+            <img alt="Mozzarella corndog" src="https://images.unsplash.com/photo-1612831455750-9d7b47d5641d?q=80&w=600&auto=format&fit=crop"/>
+            <div>
+              <h3>Mozzarella Corndog</h3>
+              <p class="muted">Stretchy mozzarella, honey batter, optional sugar dust, ketchup & mustard.</p>
+            </div>
+            <div class="price">£6.50</div>
+          </article>
+          <article class="card" role="listitem">
+            <img alt="Half & Half corndog" src="https://images.unsplash.com/photo-1615870216513-4b2b4e0d6e86?q=80&w=600&auto=format&fit=crop"/>
+            <div>
+              <h3>Half & Half Corndog</h3>
+              <p class="muted">Sausage + mozzarella, panko crunch. Best of both worlds.</p>
+            </div>
+            <div class="price">£7.00</div>
+          </article>
+          <article class="card" role="listitem">
+            <img alt="Classic beef corndog" src="https://images.unsplash.com/photo-1625944585562-48a18cd9da8b?q=80&w=600&auto=format&fit=crop"/>
+            <div>
+              <h3>Classic Beef Corndog</h3>
+              <p class="muted">Smoky beef sausage in signature batter.</p>
+            </div>
+            <div class="price">£6.00</div>
+          </article>
+          <article class="card" role="listitem">
+            <img alt="Kimbap rolls" src="https://images.unsplash.com/photo-1593034133868-614d4e1cf8fb?q=80&w=600&auto=format&fit=crop"/>
+            <div>
+              <h3>Kimbap</h3>
+              <p class="muted">Seaweed rice rolls — choose Tuna Mayo, Bulgogi, or Veggie.</p>
+            </div>
+            <div class="price">£7.50</div>
+          </article>
+          <article class="card" role="listitem">
+            <img alt="Tteokbokki" src="https://images.unsplash.com/photo-1625489971272-1517972ed18c?q=80&w=600&auto=format&fit=crop"/>
+            <div>
+              <h3>Tteokbokki</h3>
+              <p class="muted">Chewy rice cakes in gochujang sauce. Add cheese +£1.00.</p>
+            </div>
+            <div class="price">£7.00</div>
+          </article>
+          <article class="card" role="listitem">
+            <img alt="Mandu dumplings" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop"/>
+            <div>
+              <h3>Mandu (Dumplings)</h3>
+              <p class="muted">Fried or steamed; soy-sesame dip.</p>
+            </div>
+            <div class="price">£6.00</div>
+          </article>
+        </div>
+        <p class="notice" style="margin-top:14px">Allergen info available on request. Our kitchen handles gluten, sesame, soy, egg, and dairy. Vegan/vegetarian options available — please ask.</p>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="container two about">
+        <div>
+          <h2>Our Story — From <em>Kkachinae</em> (1983) to the UK</h2>
+          <p>KKachihouse is proudly associated with <strong>Kkachinae</strong>, established in 1983 in Korea. We carry forward that heritage of honest flavours and street‑side cooking, serving playful classics like corndogs, kimbap, and tteokbokki to UK streets, markets, and festivals.</p>
+          <p>We source UK ingredients where possible and prepare everything fresh at the truck. Whether you’re new to Korean food or a lifelong fan, our menu balances comfort and spice, crunch and chew — the true spirit of Seoul street food.</p>
+          <div class="strip" style="margin-top:10px">
+            <span class="pill">Family heritage</span>
+            <span class="pill">Street food roots</span>
+            <span class="pill">Freshly made</span>
+          </div>
+        </div>
+        <div class="panel" style="padding:18px">
+          <h3 style="margin-top:0">Why “KKachi”?</h3>
+          <p class="muted">In Korean, <em>kkachi</em> means magpie — a symbol of good news. We hope our food brings a little celebration to your day.</p>
+          <ul class="muted" style="margin:0 0 0 1rem;line-height:1.8">
+            <li>UK‑based food truck with pop‑ups and catering</li>
+            <li>Associated with Kkachinae (est. 1983, Korea)</li>
+            <li>Card & contactless payments</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="find-us">
+      <div class="container two">
+        <div>
+          <h2>Find Us</h2>
+          <p class="muted">We rotate between London markets and festivals across the UK. Follow our socials for the latest schedule, or enquire for private catering.</p>
+          <div class="panel" style="padding:14px">
+            <h3 style="margin:6px 0 8px">This Month</h3>
+            <ul class="muted" style="margin:0 0 0 1rem;line-height:1.9">
+              <li>Sat — <strong>Borough Market Pop‑Up</strong>, London SE1</li>
+              <li>Sun — <strong>Victoria Park</strong> Street Food Market, E3</li>
+              <li>Fri — <strong>Private Catering</strong> (booking)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" id="order" style="padding:18px">
+          <h3 style="margin-top:0">Catering & Events</h3>
+          <p class="muted">Office lunches, birthdays, festivals — we’ve got you. Tell us about your event and we’ll get back within 24 hours.</p>
+          <form id="enquiry" onsubmit="event.preventDefault(); this.reset(); alert('Thanks! We\'ll be in touch soon.');" aria-label="Catering enquiry form">
+            <label class="muted">Your name<input required name="name" placeholder="Jane Kim" /></label>
+            <label class="muted">Email<input required type="email" name="email" placeholder="you@example.com" /></label>
+            <label class="muted">Event date<input type="date" name="date" /></label>
+            <label class="muted">Location<input name="location" placeholder="City, venue, postcode" /></label>
+            <label class="muted">Message<textarea name="message" rows="4" placeholder="Tell us about your event (guest count, dietary needs)..."></textarea></label>
+            <button class="cta" type="submit">Send Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container two">
+        <div class="panel" style="padding:18px">
+          <h2 style="margin-top:0">Contact</h2>
+          <p class="muted">Email: <a href="mailto:hello@kkachihouse.co.uk">hello@kkachihouse.co.uk</a><br/>Instagram: <a href="#">@kkachihouse</a></p>
+          <p class="muted">Registered in the UK. Food safety rating available on request.</p>
+        </div>
+        <div class="panel" style="padding:18px">
+          <h3 style="margin-top:0">Allergens & Dietaries</h3>
+          <p class="muted">We prepare food in a small kitchen that handles gluten, sesame, soy, egg and dairy. Please speak to us about allergens — we’ll guide you to suitable options.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <small>© <span id="y"></span> KKachihouse — Associated with Kkachinae (est. 1983, Korea)</small>
+      <small><a href="#">Privacy</a> · <a href="#">Cookies</a></small>
+    </div>
+  </footer>
+
+  <style>
+    /* simple, accessible form styling */
+    form label{display:block;margin:10px 0 8px}
+    input,textarea{width:100%;margin-top:6px;background:#0c121a;border:1px solid #223147;color:#dfe7f5;padding:10px;border-radius:10px}
+    input:focus,textarea:focus{outline:2px solid var(--brand-2);border-color:var(--brand-2)}
+  </style>
+  <script>
+    // Set current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
